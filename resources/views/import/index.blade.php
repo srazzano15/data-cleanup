@@ -41,7 +41,7 @@
                                     <button type="submit" class="btn btn-primary">
                                         Parse CSV
                                     </button>
-                                </div>
+                                </div> 
                             </div>
                         </form>
                     </div>
