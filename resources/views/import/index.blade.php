@@ -13,7 +13,7 @@
                             @csrf
 
                             <div class="form-group{{ $errors->has('csv_file') ? ' has-error' : '' }}">
-                                <label for="csv_file" class="col-md-4 control-label">CSV file to import</label>
+                                <label for="csv_file" class="col-md-4 control-label">SDFC Data CSV File</label>
 
                                 <div class="col-md-6">
                                     <input id="csv_file" type="file" class="form-control" name="csv_file" required>
@@ -25,23 +25,36 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="form-group{{ $errors->has('control_file') ? ' has-error' : '' }}">
+                                <label for="control_file" class="col-md-4 control-label">Allbound Data CSV File</label>
 
-                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <input id="control_file" type="file" class="form-control" name="control_file" required>
+
+                                    @if ($errors->has('control_file'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('control_file') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            {{-- <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="header" checked> File contains header row?
+                                            <input type="checkbox" name="header"> File contains header row?
                                         </label>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <div class="form-group">
                                 <div class="col-md-8 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
                                         Parse CSV
                                     </button>
-                                </div> 
+                                </div>
                             </div>
                         </form>
                     </div>
